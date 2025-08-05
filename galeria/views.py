@@ -10,7 +10,7 @@ def index(request):
         return redirect('login')
 
     fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
-    return render(request, 'galeria/index.html', {"cards": fotografias})
+    return render(request, 'index.html', {"cards": fotografias})
 
 def imagem(request, foto_id):
     fotografia = get_object_or_404(Fotografia, pk=foto_id)
